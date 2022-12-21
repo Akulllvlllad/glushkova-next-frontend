@@ -1,0 +1,24 @@
+$--NEXT-screen__PC: 1200px;
+$--NEXT-screen__microPC: 992px;
+$--NEXT-screen__Tablet: 768px;
+$--NEXT-screen__phone: 480px;
+$--NEXT-screen__iphone5: 320px;
+
+.gallery {
+	padding: 1rem 2rem;
+	display: grid;
+	grid-template-columns: repeat(3, minmax(200px, 1fr));
+	grid-column-gap: 0px;
+	grid-row-gap: 0px;
+}
+
+@media (max-width: $--NEXT-screen__microPC) {
+	.gallery {
+		grid-template-columns: repeat(2, minmax(1px, 1fr));
+	}
+}
+@media (max-width: $--NEXT-screen__Tablet) {
+	.gallery {
+		grid-template-columns: repeat(1, minmax(1px, 1fr));
+	}
+}

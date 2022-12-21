@@ -1,0 +1,24 @@
+@import '../../../assets/scss/lib/globals.scss';
+
+.root{
+	padding: 0.5rem 1rem;
+	
+}
+
+.image{
+	position: relative;
+	padding-bottom: 56%;
+	cursor: pointer;
+	transition: all 0.5s linear 0s;
+	&:hover{
+		z-index: 2;
+		 transform: scale(1.1);
+	}
+}
+
+.title{
+	font-family: $--NEXT-menu__menu-font-family;
+	text-align: center;
+	letter-spacing: $--NEXT-gallery__gallery-title-letter-spacing;
+	padding: 2rem 0;
+}

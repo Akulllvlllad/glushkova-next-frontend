@@ -18,7 +18,7 @@ const navigateList: Navigate[] = [
 	{ type: 'dot' },
 	{ type: 'link', title: 'БЛОГ', to: '#' },
 	{ type: 'dot' },
-	{ type: 'link', title: 'КОНТАКТЫ', to: '#' },
+	{ type: 'link', title: 'КОНТАКТЫ', to: 'contacts' },
 ]
 
 
