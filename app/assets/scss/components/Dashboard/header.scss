@@ -1,9 +1,11 @@
 //header{
 
 .header {
+	
 	&__container {
 	}
 	&__inner {
+		
 		display: flex;
 	}
 }
@@ -33,6 +35,7 @@
 		font-size: $--NEXT-logo__font-size;
 		color: $--NEXT-logo__font-color;
 		letter-spacing: $--NEXT-logo___menu-letter-spacing;
+		opacity: 0.6;
 	}
 }
 //main header
@@ -41,7 +44,8 @@
 	&__container_main {
 	}
 	&__inner_main {
-		padding: 2rem 3rem;
+		height: $--NEXT-header__header-main;
+		padding: 0 4vw;
 		justify-content: space-between;
 		align-items: center;
 	}
