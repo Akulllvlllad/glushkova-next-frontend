@@ -47,14 +47,18 @@ export const Footer = () => {
 							{contactData.map(obj => (
 								<li key={obj.title} className='contacts__item'>
 									<div className='contact'>
-										<h4>{obj.title}</h4>
-										<div>
+										<h4 className='contact__title'>{obj.title}</h4>
+										<div className='contact__body tr-opacity'>
 											{obj.type !== 'links' ? (
 												obj.data
 											) : (
 												<ul className='contact__links'>
 													{obj.links?.map(link => (
-														<a href={link.link}>
+														<a
+															key={link.type}
+															href={link.link}
+															className='contact__link tr-opacity'
+														>
 															{link.type === 'vk' ? (
 																<SlSocialVkontakte />
 															) : link.type === 'inst' ? (

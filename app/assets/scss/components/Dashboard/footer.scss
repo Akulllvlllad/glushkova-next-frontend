@@ -10,6 +10,53 @@
 
 .contacts{
 	&__list{
+		display: flex;
+		justify-content: space-around;
+		gap: 2rem
+	}
+	&__item{
 		
+	}
+}
+
+
+
+.contact{
+	display: flex;
+	flex-direction: column;
+	gap: 3rem;
+	font-family: 'Source Sans Pro', sans-serif;
+	&__title{
+		
+		font-weight: 700;
+	}
+	&__body{
+		letter-spacing: 0.05em;
+	}
+
+	&__links{
+		display: flex;
+		gap: 0.5rem;
+	}
+
+	&__link{
+		color: inherit;
+		font-size: 1.1rem;
+	}
+}
+
+
+
+// media <===========
+
+@media (max-width: $--NEXT-screen__Tablet){
+	.contacts{
+		&__list{
+		flex-direction: column;
+	}
+	}
+	.contact{
+		gap: 0.5rem;
+		align-items: center;
 	}
 }
