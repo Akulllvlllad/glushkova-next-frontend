@@ -18,6 +18,9 @@ export default function Document() {
 					href='https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap'
 					rel='stylesheet'
 				></link>
+
+				<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet"></link>
+				
 				<meta name='theme-color' content='#CD313A' />
 
 				<meta name='msapplication-navbutton-color' content='#CD313A' />

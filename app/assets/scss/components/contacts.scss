@@ -1,0 +1,45 @@
+.Contacts {
+	&__container {
+	}
+	&__inner {
+		padding: 5rem 3rem;
+	}
+}
+
+.me {
+	display: flex;
+
+	&__img {
+		flex-basis: 33%;
+		position: relative;
+		padding-bottom: 40%;
+	}
+
+	&__body {
+		flex-basis: 67%;
+		padding: 1rem 0 2rem 4rem;
+	}
+
+	&__quote {
+		text-align: end;
+		width: 100%;
+		em {
+			font-family: playfair display, serif;
+			font-size: 2rem;
+			&::before {
+				content: '“ ';
+			}
+			&::after {
+				content: ' ”';
+			}
+		}
+	}
+}
+
+.links__me {
+	gap: 1.5rem;
+	a {
+		font-size: 2rem;
+	}
+}
+
