@@ -6,6 +6,7 @@ import { LinksPanel } from '../app/components/ui/linksPanel/LinksPanel'
 import { FastLinks } from '../app/components/ui/panel-link/FastLinks'
 import { Essay } from '../app/components/ui/essay/Essay'
 import { Form } from '../app/components/ui/form/Form'
+import { Flex2 } from '../app/components/ui/flex2/Flex2'
 
 const me = {
 	image: img1,
@@ -53,10 +54,15 @@ export default function Contacts() {
 						</div>
 					</div>
 				</div>
-				<div className='me__'>
-					<Essay description={me.description} />
-					<Form />
-					
+
+				<div className='me__info'>
+					<div className='me__essay'>
+						<Essay description={me.description} />
+					</div>
+					<div className='me__form'>
+						<h2 className='me__form-title'>Свяжись со мной</h2>
+						<Form />
+					</div>
 				</div>
 			</Section>
 		</Dashboard>

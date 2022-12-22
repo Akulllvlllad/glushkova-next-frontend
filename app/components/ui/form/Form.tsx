@@ -1,5 +1,6 @@
 import React from 'react'
 import { Input } from '../fields/Input/Input'
+import { Textarea } from '../fields/Textarea/Textarea'
 import styles from './form.module.scss'
 
 
@@ -12,7 +13,12 @@ export const Form = () => {
 				<Input placeholder='События' />
 				<Input placeholder='Дата' />
 			</div>
-			<div className={styles.col}>dfg</div>
+			<div className={styles.col}>
+				<Textarea placeholder='Сообщение' />
+			</div>
+			<div className={styles.buttonWrapper}>
+				<button className={styles.button}>Отправить</button>
+			</div>
 		</form>
 	)
 }
