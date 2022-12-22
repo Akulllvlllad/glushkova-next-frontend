@@ -20,7 +20,7 @@ export default function Document() {
 				></link>
 
 				<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet"></link>
-				
+				<link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap" rel="stylesheet"></link>
 				<meta name='theme-color' content='#CD313A' />
 
 				<meta name='msapplication-navbutton-color' content='#CD313A' />

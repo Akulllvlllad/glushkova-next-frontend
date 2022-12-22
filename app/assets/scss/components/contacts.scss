@@ -1,3 +1,10 @@
+$--NEXT-screen__PC: 1200px;
+$--NEXT-screen__microPC: 992px;
+$--NEXT-screen__Tablet: 768px;
+$--NEXT-screen__phone: 480px;
+$--NEXT-screen__iphone5: 320px;
+
+
 .Contacts {
 	&__container {
 	}
@@ -8,18 +15,27 @@
 
 .me {
 	display: flex;
-
+	flex-wrap: wrap;
+	
 	&__img {
-		flex-basis: 33%;
+		flex-basis: 40%;
 		position: relative;
-		padding-bottom: 40%;
+		padding-bottom: 47%;
+		
 	}
 
 	&__body {
-		flex-basis: 67%;
+		flex-basis: 60%;
 		padding: 1rem 0 2rem 4rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
 	}
-
+	&__contacts{
+		display: flex;
+		flex-direction: column;
+		gap: 2.4rem;
+	}
 	&__quote {
 		text-align: end;
 		width: 100%;
@@ -38,8 +54,22 @@
 
 .links__me {
 	gap: 1.5rem;
+	justify-content: end;
 	a {
 		font-size: 2rem;
 	}
 }
-
+// media < =======================
+@media(max-width: $--NEXT-screen__Tablet) {
+	.me{
+		&__img{
+			flex-basis: 100%;
+			padding-bottom: 100%;
+		}
+		&__body{
+			flex-basis: 100%;
+			padding: 1rem 0;
+			height: 20rem;
+		}
+	}
+}

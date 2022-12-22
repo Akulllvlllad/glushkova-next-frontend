@@ -3,6 +3,10 @@
 .root{
 	font-family: didact gothic, serif;
 	font-size: 1.4rem;
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
 	strong{
 	
 	}
