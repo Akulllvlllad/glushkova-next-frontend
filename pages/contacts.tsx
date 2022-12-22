@@ -5,7 +5,7 @@ import img1 from '../app/assets/image/look.com.ua-119261.jpg'
 import { LinksPanel } from '../app/components/ui/linksPanel/LinksPanel'
 import { FastLinks } from '../app/components/ui/panel-link/FastLinks'
 import { Essay } from '../app/components/ui/essay/Essay'
-import { Form } from '../app/components/ui/form/form'
+import { Form } from '../app/components/ui/form/Form'
 
 const me = {
 	image: img1,

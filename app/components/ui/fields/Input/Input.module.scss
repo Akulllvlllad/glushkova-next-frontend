@@ -1,0 +1,40 @@
+.root {
+	width: 100%;
+}
+
+.wrapper {
+	width: 100%;
+	position: relative;
+	border: 1px solid black;
+}
+.label {
+	font-family: anonymous pro;
+	position: absolute;
+	pointer-events: none;
+	left: 1rem;
+	top: 50%;
+	transform: translate(0, -50%);
+	transition: all 0.3s linear 0s;
+}
+.input {
+	width: 100%;
+	height: 100%;
+	padding: 1rem;
+	transition: all 0.3s linear 0s;
+}
+
+.input:focus ~ .label {
+	transform: translate(0, -190%);
+	font-size: 0.7rem;
+}
+
+.wrapperError {
+	width: 100%;
+	height: 1rem;
+
+	.error {
+		font-family: anonymous pro;
+		padding-left: 0.2rem;
+		color: red;
+	}
+}
