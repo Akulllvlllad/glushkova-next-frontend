@@ -1,0 +1,51 @@
+.root{
+	margin: 2rem 0;
+	width: 100%;
+	padding: 3rem 1rem;
+	display: flex;
+justify-content: center;
+
+}
+
+.button{
+	border-radius: 5px;
+	font-size: 1rem;
+	font-family: "Source Sans Pro", sans-serif;
+	padding: 1rem 2rem;
+	background: linear-gradient(90deg, rgba(71,244,135,1) 0%, rgba(37,211,102,1) 100%);
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	color: black;
+	transition: all 0.3s linear 0s;
+	animation: shake cubic-bezier(0.36, 0.07, 0.19, 0.97) 2.6s infinite  1000ms forwards;
+	svg{
+		font-size: 1.3em;
+	}
+	&:hover{
+		color:  rgba(71,244,135,1);
+		background: black;
+	}
+}
+
+
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+  60% {
+    transform: rotate(-5deg);
+  }
+  70% {
+    transform: rotate(5deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
