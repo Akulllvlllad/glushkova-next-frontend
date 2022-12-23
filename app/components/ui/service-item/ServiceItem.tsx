@@ -13,7 +13,7 @@ export const ServiceItem: FC<Service> = ({ name, price, description }) => {
 			<div className={styles.wrapper}>
 				<strong className={styles.title}>{name}</strong>
 				<strong className={styles.price}>{price} ₽</strong>
-				<p className={styles.description}>{description}</p>
+				<div className={styles.description}>{description}</div>
 			</div>
 		</article>
 	)

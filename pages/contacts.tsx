@@ -6,7 +6,7 @@ import { LinksPanel } from '../app/components/ui/linksPanel/LinksPanel'
 import { FastLinks } from '../app/components/ui/panel-link/FastLinks'
 import { Essay } from '../app/components/ui/essay/Essay'
 import { Form } from '../app/components/ui/form/Form'
-import { Flex2 } from '../app/components/ui/flex2/Flex2'
+
 import { TitlePage } from '../app/components/ui/title/TitlePage'
 
 const me = {
