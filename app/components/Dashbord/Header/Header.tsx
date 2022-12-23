@@ -12,7 +12,7 @@ const logo = 'ЕКАТЕРИНА ГЛУШКОВА'
 const navigateList: Navigate[] = [
 	{ type: 'link', title: 'ПОРТФОЛИО', to: 'wedding-series' },
 	{ type: 'dot' },
-	{ type: 'link', title: 'ЦЕНЫ', to: '#' },
+	{ type: 'link', title: 'ЦЕНЫ', to: 'services' },
 	{ type: 'dot' },
 	{ type: 'link', title: 'ФОТОСЕРИИ', to: '#' },
 	{ type: 'dot' },

@@ -7,6 +7,7 @@ import { FastLinks } from '../app/components/ui/panel-link/FastLinks'
 import { Essay } from '../app/components/ui/essay/Essay'
 import { Form } from '../app/components/ui/form/Form'
 import { Flex2 } from '../app/components/ui/flex2/Flex2'
+import { TitlePage } from '../app/components/ui/title/TitlePage'
 
 const me = {
 	image: img1,
@@ -33,6 +34,7 @@ const links = [
 export default function Contacts() {
 	return (
 		<Dashboard>
+			<TitlePage>Контакты</TitlePage>
 			<Section className={'Contacts'}>
 				<div className='me'>
 					<div className='me__img'>
