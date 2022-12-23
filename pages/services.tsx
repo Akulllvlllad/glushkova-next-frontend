@@ -1,9 +1,9 @@
-import { Dashboard } from '../app/components/Dashbord/Dashboard'
-import { ExtraInfo } from '../app/components/ui/Extra-info/ExtraInfo'
-import { Section } from '../app/components/ui/section'
-import { ServiceItem } from '../app/components/ui/service-item/ServiceItem'
-import { TitlePage } from '../app/components/ui/title/TitlePage'
-import { WhatsappButton } from '../app/components/ui/whatsapp-button/WhatsappButton'
+import { Dashboard } from '../src/components/Dashbord/Dashboard'
+import { ExtraInfo } from '../src/components/ui/Extra-info/ExtraInfo'
+import { Section } from '../src/components/ui/Section'
+import { ServiceItem } from '../src/components/ui/service-item/ServiceItem'
+import { TitlePage } from '../src/components/ui/title/TitlePage'
+import { WhatsappButton } from '../src/components/ui/whatsapp-button/WhatsappButton'
 
 
 type Service = {

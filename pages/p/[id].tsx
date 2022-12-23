@@ -1,45 +1,95 @@
-import { GetStaticPaths } from "next"
-import { useRouter } from "next/router"
-import { useEffect, useState } from "react"
-import { Dashboard } from "../../app/components/Dashbord/Dashboard"
-import { Section } from "../../app/components/ui/section"
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import { Dashboard } from '../../src/components/Dashbord/Dashboard'
+import { Section } from '../../src/components/ui/Section'
+import Image, { StaticImageData } from 'next/image'
+import { NavigationGallery } from '../../src/components/ui/navigation-gallery/NavigationGallery'
 
+type GalleryImage = {
+	id: string
+	path: string | StaticImageData
+}
 
 const gallery = [
-	{ id: '1', title: 'one', gallery: [] },
-	{ id: '2', title: 'two', gallery: [] },
-	{ id: '3', title: 'three', gallery: [] },
-	{ id: '4', title: 'six', gallery: [] },
+	{
+		id: '1',
+		title: 'one',
+		galleryImage: [
+			{
+				id: '2',
+				path: 'https://i.pinimg.com/236x/d5/08/8c/d5088c7e4970c1635901d0ddbf940673.jpg',
+			},
+			{
+				id: '3',
+				path: 'https://i.pinimg.com/236x/2e/33/27/2e3327b1d69c0d4c3c5446a075db9d23.jpg',
+			},
+			{
+				id: '4',
+				path: 'https://i.pinimg.com/236x/e9/91/d2/e991d24cb23502dd773879922953ac36.jpg',
+			},
+			{
+				id: '6',
+				path: 'https://i.pinimg.com/236x/1b/12/c4/1b12c4dc9c2b31b92f9bbc2941e89dc2.jpg',
+			},
+			{
+				id: '5',
+				path: 'https://i.pinimg.com/236x/32/ad/68/32ad68c05aba3d902fc10897dfa10b75.jpg',
+			},
+			{
+				id: '8',
+				path: 'https://i.pinimg.com/564x/12/5c/5f/125c5fe8f33e5c58b9a29357d5aea166.jpg',
+			},
+
+			{
+				id: '7',
+				path: 'https://i.pinimg.com/236x/e9/60/1e/e9601e620812df631ca48c21669e44cc.jpg',
+			},
+		],
+	},
+	{ id: '2', title: 'two', galleryImage: [] },
+	{ id: '3', title: 'three', galleryImage: [] },
+	{ id: '4', title: 'six', galleryImage: [] },
 ]
 
-
-
-
 export default function Gallery() {
-  const router = useRouter()
-  const { id } = router.query
-  const [desc, setDesc] = useState('')
+	const router = useRouter()
+	const { id } = router.query
+	const [desc, setDesc] = useState<GalleryImage[]>([])
+	const [currentPage, setCurrentPage] = useState<string | null>(null)
 
-  useEffect(() => {
+	useEffect(() => {
 		if (!router.isReady) return
 
 		gallery.map(item => {
 			if (item.id === id) {
-				setDesc(item.title)
+				setCurrentPage(item.id)
+				setDesc(item.galleryImage)
 			}
 		})
 	}, [router.query.id, router.isReady])
 
+	if (!currentPage) return null
+
 	return (
 		<Dashboard>
 			<Section className='Gallery'>
-        <div></div>
-      </Section>
+				<div className='grid-gallery'>
+					{desc.length > 0 &&
+						desc.map(image => (
+							<article key={image.id} className='grid-gallery__item'>
+								<div className='grid-gallery__img'>
+									<Image
+										src={image.path}
+										alt={image.id}
+										fill
+										style={{ objectFit: 'cover' }}
+									/>
+								</div>
+							</article>
+						))}
+				</div>
+				<NavigationGallery />
+			</Section>
 		</Dashboard>
 	)
 }
-
-
-
-
-

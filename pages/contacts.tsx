@@ -1,13 +1,13 @@
-import { Dashboard } from '../app/components/Dashbord/Dashboard'
-import { Section } from '../app/components/ui/section'
+import { Dashboard } from '../src/components/Dashbord/Dashboard'
+import { Section } from '../src/components/ui/Section'
 import Image from 'next/image'
-import img1 from '../app/assets/image/look.com.ua-119261.jpg'
-import { LinksPanel } from '../app/components/ui/linksPanel/LinksPanel'
-import { FastLinks } from '../app/components/ui/panel-link/FastLinks'
-import { Essay } from '../app/components/ui/essay/Essay'
-import { Form } from '../app/components/ui/form/Form'
+import img1 from '../src/assets/image/look.com.ua-119261.jpg'
+import { LinksPanel } from '../src/components/ui/linksPanel/LinksPanel'
+import { FastLinks } from '../src/components/ui/panel-link/FastLinks'
+import { Essay } from '../src/components/ui/essay/Essay'
+import { Form } from '../src/components/ui/form/Form'
 
-import { TitlePage } from '../app/components/ui/title/TitlePage'
+import { TitlePage } from '../src/components/ui/title/TitlePage'
 
 const me = {
 	image: img1,
