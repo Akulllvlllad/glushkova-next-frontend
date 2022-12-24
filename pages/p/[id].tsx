@@ -4,10 +4,11 @@ import { Dashboard } from '../../src/components/Dashbord/Dashboard'
 import { Section } from '../../src/components/ui/Section'
 import Image, { StaticImageData } from 'next/image'
 import { NavigationGallery } from '../../src/components/ui/navigation-gallery/NavigationGallery'
+import { SliderImages } from '../../src/components/ui/Slider-Images/SliderImages'
 
 type GalleryImage = {
 	id: string
-	path: string | StaticImageData
+	path: string
 }
 
 const gallery = [
@@ -45,10 +46,7 @@ const gallery = [
 				path: 'https://i.pinimg.com/236x/e9/60/1e/e9601e620812df631ca48c21669e44cc.jpg',
 			},
 		],
-	},
-	{ id: '2', title: 'two', galleryImage: [] },
-	{ id: '3', title: 'three', galleryImage: [] },
-	{ id: '4', title: 'six', galleryImage: [] },
+	}
 ]
 
 export default function Gallery() {
@@ -68,6 +66,20 @@ export default function Gallery() {
 		})
 	}, [router.query.id, router.isReady])
 
+	const [isOpen, setIsOpen] = useState(false)
+	const [currentImage, setCurrentImage] = useState(0)
+	const closeSliderImages = () => {
+		setIsOpen(false)
+	}
+	const openSliderImages = () => {
+		setIsOpen(true)
+	}
+
+	const chooseImage = (index: number) => {
+		setCurrentImage(index)
+		openSliderImages()
+	}
+	
 	if (!currentPage) return null
 
 	return (
@@ -75,21 +87,33 @@ export default function Gallery() {
 			<Section className='Gallery'>
 				<div className='grid-gallery'>
 					{desc.length > 0 &&
-						desc.map(image => (
+						desc.map((image, index) => (
 							<article key={image.id} className='grid-gallery__item'>
-								<div className='grid-gallery__img'>
+								<div
+									onClick={() => chooseImage(index)}
+									className='grid-gallery__img'
+								>
 									<Image
 										src={image.path}
 										alt={image.id}
 										fill
 										style={{ objectFit: 'cover' }}
+										sizes='(max-width: 768px) 100vw,
+              (max-width: 1200px) 50vw,
+              33vw'
 									/>
 								</div>
 							</article>
 						))}
 				</div>
+
 				<NavigationGallery />
 			</Section>
+			<SliderImages
+				imagePath={desc[currentImage]}
+				isOpen={isOpen}
+				closeSliderImages={closeSliderImages}
+			/>
 		</Dashboard>
 	)
 }
