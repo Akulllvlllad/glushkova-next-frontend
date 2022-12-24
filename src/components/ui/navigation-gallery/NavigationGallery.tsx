@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 import styles from './NavigationGallery.module.scss'
 import cn from 'classnames'
 import {BsArrowRight, BsArrowLeft} from 'react-icons/bs'
-
+import Slider from "react-slick";
 
 const data = ['1', '2', '3', '4']
 
 export const NavigationGallery = () => {
-	
+
 	const [galleryPage, setGalleryPage] = useState<string[]>(data)
 
 	const [indexPage, setIndexPage] = useState<null | number>(null)

@@ -6,7 +6,7 @@ import Image, { StaticImageData } from 'next/image'
 import { NavigationGallery } from '../../src/components/ui/navigation-gallery/NavigationGallery'
 import { SliderImages } from '../../src/components/ui/Slider-Images/SliderImages'
 
-type GalleryImage = {
+export type GalleryImage = {
 	id: string
 	path: string
 }
@@ -110,7 +110,8 @@ export default function Gallery() {
 				<NavigationGallery />
 			</Section>
 			<SliderImages
-				imagePath={desc[currentImage]}
+				currentImage={currentImage}
+				imageArr={desc}
 				isOpen={isOpen}
 				closeSliderImages={closeSliderImages}
 			/>

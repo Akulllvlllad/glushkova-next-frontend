@@ -43,6 +43,63 @@
 .grid-gallery__item:nth-child(3n) {
 		grid-row: span 2;
 	}
+
+
+.slider{
+	position: relative;
+	.slick-arrow{
+		position: fixed;
+		background-color: black;
+		height: 100%;
+		width: 20%;
+		opacity: 0;
+		align-items: center;
+		
+	}
+	.slick-next{
+		right: 0;
+	}
+	.slick-prev{
+		left: 0;
+		z-index: 2;
+	}
+
+	&__svg-arrow{
+		z-index: -1;
+		position: fixed;
+		font-size: 2rem;
+		top: 50%;
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		
+	}
+	&__svg-arrow-prev{
+		left: 1rem;
+	}
+	&__svg-arrow-next{
+		right: 1rem;
+	}
+}
+
+
+
+
+
+@media(max-width: 700px){
+	.slider__svg-arrow{
+		visibility: hidden;
+	}
+	.slider{
+		.slick-arrow{
+			visibility: hidden;
+		}
+	}
+}
+
+
+
+
+
 @media (max-width: 500px) {
 	.grid-gallery {
 		grid-template-columns: repeat(1fr, 1fr);

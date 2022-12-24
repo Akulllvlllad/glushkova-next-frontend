@@ -3,44 +3,60 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import styles from './SliderImages.module.scss'
 import Image from 'next/image'
+import { MdOutlineClose } from 'react-icons/md'
+import { AiOutlineArrowRight, AiOutlineArrowLeft } from 'react-icons/ai'
+import Slider from 'react-slick'
+import { GalleryImage } from '../../../../pages/p/[id]'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
 
 type SliderImagesProps = {
 	isOpen: boolean
 	closeSliderImages: () => void
-
-	imagePath: {
-		id: string
-		path: string
-	}
+	currentImage: number
+	imageArr: GalleryImage[]
 }
 
 export const SliderImages: FC<SliderImagesProps> = ({
-	imagePath,
+	currentImage,
+	imageArr,
 	closeSliderImages,
-
 	isOpen,
 }) => {
-	console.log(imagePath)
+	const settings = {
+		dots: false,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		fade: true,
+		initialSlide: currentImage,
+	}
 
 	return (
 		<Dialog className={styles.root} open={isOpen} onClose={() => null}>
 			<Dialog.Panel className={styles.panel}>
-				<div className={styles.img} >
-					{imagePath?.path && (
-						<Image
-							src={imagePath.path}
-							alt={imagePath.id}
-							fill
-							style={{ objectFit: 'contain' }}
-							sizes='(max-width: 768px) 100vw,
-              (max-width: 1200px) 50vw,
-              33vw'
-						/>
-					)}
-				</div>
-
-				
-				<button onClick={closeSliderImages}>Cancel</button>
+				<AiOutlineArrowLeft
+					className={'slider__svg-arrow slider__svg-arrow-prev '}
+				/>
+				<Slider {...settings} className='slider'>
+					{imageArr.map((image, i) => (
+						<div className={styles.img}>
+							<Image
+								src={image.path}
+								alt={'slide images'}
+								fill
+								style={{ objectFit: 'contain' }}
+							/>
+						</div>
+					))}
+				</Slider>
+				<AiOutlineArrowRight
+					className={'slider__svg-arrow slider__svg-arrow-next'}
+				/>
+				<button onClick={closeSliderImages} className={styles.close}>
+					<MdOutlineClose />
+				</button>
 			</Dialog.Panel>
 		</Dialog>
 	)
