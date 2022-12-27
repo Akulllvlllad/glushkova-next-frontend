@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, useEffect } from 'react'
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import styles from './SliderImages.module.scss'
@@ -23,16 +23,18 @@ export const SliderImages: FC<SliderImagesProps> = ({
 	closeSliderImages,
 	isOpen,
 }) => {
-	const settings = {
+	const [settings, setSettings] = useState({
 		dots: false,
 		infinite: true,
 		speed: 500,
 		slidesToShow: 1,
 		slidesToScroll: 1,
-		fade: true,
+		lazyLoad: true,
+		fade: screen.availWidth < 700 ? false : true,
 		initialSlide: currentImage,
-	}
+	})
 
+	
 	return (
 		<Dialog className={styles.root} open={isOpen} onClose={() => null}>
 			<Dialog.Panel className={styles.panel}>
@@ -41,7 +43,7 @@ export const SliderImages: FC<SliderImagesProps> = ({
 				/>
 				<Slider {...settings} className='slider'>
 					{imageArr.map((image, i) => (
-						<div className={styles.img}>
+						<div className={styles.img} key={image.id}>
 							<Image
 								src={image.path}
 								alt={'slide images'}
