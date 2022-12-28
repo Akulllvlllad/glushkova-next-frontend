@@ -1,11 +1,10 @@
 import { FC } from 'react'
 import { IGallery } from '../../types/gallerty.interface'
 import { Dashboard } from '../Dashbord/Dashboard'
+import { NavigationGallery } from '../ui/navigation-gallery/NavigationGallery'
 import { Section } from '../ui/Section'
 
-export const Gallery: FC<{ gallery: IGallery }> = ({ gallery }) => {
-	console.log(gallery )
-	
+export const Gallery: FC<IGallery > = props => {
 	return (
 		<Dashboard>
 			<Section className='Gallery'>
@@ -29,9 +28,9 @@ export const Gallery: FC<{ gallery: IGallery }> = ({ gallery }) => {
 								</div>
 							</article>
 						))}
-				</div>
+				</div>*/}
 
-				<NavigationGallery /> */}
+				<NavigationGallery />
 			</Section>
 			{/* <SliderImages
 				currentImage={currentImage}

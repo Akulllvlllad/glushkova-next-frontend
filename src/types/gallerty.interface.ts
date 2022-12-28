@@ -8,4 +8,5 @@ export interface IGallery {
 	gallery: string
 	location: string
 	titleImage: string
+	isPublic: boolean
 }

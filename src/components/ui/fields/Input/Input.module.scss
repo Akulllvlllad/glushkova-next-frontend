@@ -23,10 +23,11 @@
 	padding: 1rem;
 	transition: all 0.3s linear 0s;
 }
-
-.input:focus ~ .label {
+.wrapper input:valid ~ .label,
+.wrapper input:focus ~ .label {
 	transform: translate(0, -190%);
 	font-size: 0.7rem;
+	
 }
 
 .wrapperError {

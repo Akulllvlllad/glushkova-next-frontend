@@ -13,8 +13,16 @@ export const GalleryService = {
 		return axiosClassic.get<IGallery[]>(`/gallery`)
 	},
 	async getGallery(id: string) {
-		
-		
 		return axiosClassic.get<IGallery>(`/gallery/${id}`)
+	},
+
+	async createNewGallery() {
+		return axiosClassic.post<string>(`/gallery`)
+	},
+	async deleteGallery(id: string) {
+		return axiosClassic.delete<string>(`/gallery/${id}`)
+	},
+	async updateCurrentGallery(id: string, body: IGallery) {
+		return axiosClassic.patch<string>(`/gallery/${id}`, body)
 	},
 } 
