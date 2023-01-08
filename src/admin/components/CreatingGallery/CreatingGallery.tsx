@@ -56,6 +56,7 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 	)
 
 	const updateCurrentGallery = async (id: string, body: IGallery) => {
+		
 		try {
 			await GalleryService.updateCurrentGallery(id, body)
 			reloadGalleries()
@@ -68,6 +69,7 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 		reset,
 		watch,
 		control,
+		getValues,
 		formState: { errors },
 	} = useForm<IGallery>({
 		defaultValues: useMemo(() => {
@@ -84,9 +86,14 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 		}, [galleryId]),
 	})
 
-	const onSubmit: SubmitHandler<IGallery> = data => {
+	const onSubmit: SubmitHandler<IGallery> = (data, e) => {
+		e?.preventDefault()
+		
 		updateCurrentGallery(galleryId, data)
 	}
+
+	
+	
 
 	return (
 		<Dialog open={isOpen} onClose={closeDialog} className={styles.dialog}>
@@ -106,10 +113,19 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 							<Input placeholder='Баннер' {...register('bannerImage')} />
 							<button className={styles.button}>Добавить </button>
 						</div>
-						{/* <div>
-								<Image  src={}/>
-							</div> */}
+						<div className={styles.img}>
+							{getValues('bannerImage') && (
+								<Image
+									src={getValues('bannerImage')}
+									alt='my photo'
+									fill
+									style={{ objectFit: 'cover' }}
+								/>
+							)}
+						</div>
 					</div>
+
+					<div></div>
 
 					<Controller
 						control={control}

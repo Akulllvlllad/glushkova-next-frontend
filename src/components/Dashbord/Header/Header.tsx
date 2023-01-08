@@ -1,5 +1,8 @@
 import Link from 'next/link'
 import React from 'react'
+import cn from 'classnames'
+import { useInViewOne } from '../../../hooks/useInViewOne'
+
 
 type Navigate = {
 	title?: string
@@ -22,20 +25,34 @@ const navigateList: Navigate[] = [
 
 
 export const Header = () => {
+
+	const { ref, inView, entry, isView } = useInViewOne()
+	
+	
+	
+	
 	return (
 		<>
-			<header className='header header_main'>
+			<header
+				ref={ref}
+				className={cn('header', 'header_main', { active: isView })}
+			>
 				<div className='container header__container_main'>
 					<div className='header__inner header__inner_main'>
-						<div className='logo'>
-							<a href='/' className='logo__title'>{logo}</a>
+						<div className={cn('logo', { active: isView })}>
+							<a href='/' className='logo__title'>
+								{logo}
+							</a>
 						</div>
-						<nav className='nav nav_main'>
+						<nav className={cn('nav', 'nav_main', { active: isView })}>
 							<ul className='nav__list nav__list_main'>
 								{navigateList.map((obj, index) =>
 									obj.type === 'link' ? (
 										<li key={index} className='nav__item nav__item_main'>
-											<Link href={obj.to as string} className='nav__link nav__link_main '>
+											<Link
+												href={obj.to as string}
+												className='nav__link nav__link_main '
+											>
 												{obj.title}
 											</Link>
 										</li>
@@ -51,11 +68,28 @@ export const Header = () => {
 				</div>
 			</header>
 
-			<header className='header header_fixed'>
+			<header className={cn('header', 'header_fixed', { active: !inView })}>
 				<div className='container header__container'>
 					<div className='header__inner'>
-						<nav className='nav'>
-							<ul></ul>
+						<nav className={cn('nav', 'nav_main', { active: isView })}>
+							<ul className='nav__list nav__list_main'>
+								{navigateList.map((obj, index) =>
+									obj.type === 'link' ? (
+										<li key={index} className='nav__item nav__item_main'>
+											<Link
+												href={obj.to as string}
+												className='nav__link nav__link_main '
+											>
+												{obj.title}
+											</Link>
+										</li>
+									) : (
+										<li key={index} className='nav__dot nav__dot_main'>
+											•
+										</li>
+									)
+								)}
+							</ul>
 						</nav>
 					</div>
 				</div>

@@ -21,14 +21,14 @@ export const Toggle: React.FC<IToggle> = ({
 				checked={isEnabled}
 				onChange={setIsEnabled}
 				className={cn(styles.switch, {
-					'bg-blue-600': isEnabled,
-					'bg-gray-200': !isEnabled,
+					[styles.isEnabled]: isEnabled,
+					[styles.isNotEnabled]: !isEnabled,
 				})}
 			>
 				<span
 					className={cn(styles.point, {
-						'translate-x-6': isEnabled,
-						'translate-x-1': !isEnabled,
+						[styles.translate6]: isEnabled,
+						[styles.translate0]: !isEnabled,
 					})}
 				/>
 			</Switch>

@@ -1,0 +1,42 @@
+.header.active {
+	transform: translate(0, 0);
+	filter: blur(0);
+}
+
+.main.active {
+	filter: blur(0);
+	
+}
+
+.footer.active{
+	filter: blur(0);
+}
+
+.nav.active{
+	transform: translate(0%, 0%);
+	opacity: 1;
+}
+
+.header_fixed{
+	position: fixed;
+	
+	opacity: 0;
+	transition: all .3s linear .2s;
+	display: flex;
+	justify-content: center;
+	padding: 1rem;
+	transform: translate(0%, -100%) ;
+	z-index: 50;
+}
+.header_fixed.active{
+	
+	background-color: white;
+	transform: translate(0%, 0%);
+	width: 100%;
+	
+	
+	opacity: 1;
+}
+.logo.active{
+
+}

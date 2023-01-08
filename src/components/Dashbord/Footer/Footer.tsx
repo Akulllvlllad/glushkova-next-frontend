@@ -1,5 +1,6 @@
-import { link } from 'fs'
 import React from 'react'
+import { useInView } from 'react-intersection-observer'
+import cn from 'classnames'
 
 import {
 	SlSocialVkontakte,
@@ -38,8 +39,12 @@ const contactData: ContactData[] = [
 ]
 
 export const Footer = () => {
+	const { ref, inView, entry } = useInView({
+		threshold: 0,
+	})
+
 	return (
-		<footer className='footer'>
+		<footer ref={ref} className={cn('footer', { active: inView })}>
 			<div className='container footer__container'>
 				<div className='footer__inner'>
 					<div className='contacts'>
