@@ -9,6 +9,7 @@ import Image from 'next/image'
 import { useMutation, useQuery } from 'react-query'
 import { GalleryService } from '../../../service/gallery.service'
 import { Toggle } from '../../../components/ui/fields/toggle/Toggle'
+import { ImagesGallery } from '../../ui/images-gallery/ImagesGallery'
 
 
 
@@ -125,7 +126,9 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 						</div>
 					</div>
 
-					<div></div>
+					<div>
+						<ImagesGallery galleryId={galleryId} />
+					</div>
 
 					<Controller
 						control={control}

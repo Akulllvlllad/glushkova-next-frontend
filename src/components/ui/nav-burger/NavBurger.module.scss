@@ -1,0 +1,27 @@
+@import '../../../assets/scss/lib/globals.scss';
+
+
+.root{
+	display: none;
+	position: absolute;
+	background-color: red;
+	text-align: end;
+	right: 0;
+		top: 0;
+	.burger{
+		font-size: 2rem;
+	}
+	.list{
+		
+		
+		
+	}
+}
+
+
+
+@media(max-width: $--NEXT-screen__microPC){
+	.root{
+		display: block;
+	}
+}

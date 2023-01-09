@@ -11,7 +11,7 @@ const nextConfig = {
 			{
 				source: '/api/:path*',
 				destination: 'http://loacalhost:3333/api/:path*',
-			}
+			},
 		]
 	},
 	images: {
@@ -19,6 +19,10 @@ const nextConfig = {
 			{
 				protocol: 'https',
 				hostname: '**.pinimg.com',
+			},
+			{
+				protocol: 'https',
+				hostname: '**.pinterest.com',
 			},
 		],
 	},

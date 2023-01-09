@@ -1,9 +1,5 @@
-import {axiosClassic} from '../axios/axios'
+import { axiosClassic } from '../axios/axios'
 import { IGallery } from '../types/gallerty.interface'
-
-
-
-
 
 export const GalleryService = {
 	async getAllPagesGallery() {
@@ -25,4 +21,8 @@ export const GalleryService = {
 	async updateCurrentGallery(id: string, body: IGallery) {
 		return axiosClassic.patch<string>(`/gallery/${id}`, body)
 	},
-} 
+
+	async getImagesFromGallery(id: string) {
+		return axiosClassic.get<string[]>(`/gallery/get-image/${id}`)
+	},
+}
