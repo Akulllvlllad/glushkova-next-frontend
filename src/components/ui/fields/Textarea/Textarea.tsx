@@ -1,8 +1,8 @@
 import { FC, forwardRef } from 'react'
 import styles from './Textarea.module.scss'
-import { ITextarea } from '../fields.interface'
+import { TextareaProps } from './Textarea.interface'
 
-export const Textarea: FC = forwardRef<HTMLTextAreaElement, ITextarea>(
+export const Textarea: FC = forwardRef<HTMLTextAreaElement, TextareaProps>(
 	({ placeholder, error, style, ...rest }, ref) => {
 		return (
 			<article className={styles.root}>

@@ -1,17 +1,9 @@
 import { FC, forwardRef, useEffect, useRef, useState } from 'react'
 import styles from './Input.module.scss'
-import { IInput } from '../fields.interface'
+import { InputProps } from './Inputs.interface'
 
-
-
-
-
-export const Input: FC = forwardRef<HTMLInputElement, IInput>(
-	({  placeholder, error, type = 'text', style, ...rest }, ref) => {
-
-		
-		
-		
+export const Input: FC = forwardRef<HTMLInputElement, InputProps>(
+	({ placeholder, error, type = 'text', style, ...rest }, ref) => {
 		return (
 			<article className={styles.root}>
 				<div className={styles.wrapper} style={style}>
@@ -33,9 +25,3 @@ export const Input: FC = forwardRef<HTMLInputElement, IInput>(
 )
 
 
-Input.displayName = 'Input'
-
-
-	
-			
-					

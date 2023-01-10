@@ -25,4 +25,10 @@ export const GalleryService = {
 	async getImagesFromGallery(id: string) {
 		return axiosClassic.get<string[]>(`/gallery/get-image/${id}`)
 	},
+
+	async pushImagesToGallery(id: string, imageLink: string) {
+		console.log(id + imageLink)
+		
+		return axiosClassic.post<string>(`/gallery/add-image/${id}`, {'https//' imageLink})
+	},
 }

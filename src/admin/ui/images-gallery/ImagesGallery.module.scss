@@ -1,7 +1,18 @@
-.gallery{
-
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1fr;
+	grid-column-gap: 10px;
+	grid-row-gap: 10px;
 }
 
-.item{
-	
+.item {
+	position: relative;
+	padding-bottom: 100%;
+}
+
+.photo{
+	position: relative;
+	width: 100px;
+	height: 100px;
 }

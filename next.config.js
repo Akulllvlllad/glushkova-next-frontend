@@ -18,11 +18,7 @@ const nextConfig = {
 		remotePatterns: [
 			{
 				protocol: 'https',
-				hostname: '**.pinimg.com',
-			},
-			{
-				protocol: 'https',
-				hostname: '**.pinterest.com',
+				hostname: '**',
 			},
 		],
 	},

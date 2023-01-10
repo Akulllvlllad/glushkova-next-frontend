@@ -5,18 +5,20 @@
 	position: fixed;
 	width: 100vw;
 	height: 100vh;
-	overflow: hidden;
+	overflow-y: auto;
 	background-color: rgba(0, 0, 0, 0.2);	
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 5rem  0 0 0;
 }
 
 .panel{
+	padding: 2rem ;
 	background-color: white;
 	width: 1000px;
 	border-radius: 20px;
-	height: 95vh;
+	
 }
 
 .img{

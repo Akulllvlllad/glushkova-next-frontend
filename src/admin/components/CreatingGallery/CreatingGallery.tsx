@@ -101,6 +101,7 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 			<Dialog.Panel className={styles.panel}>
 				<Dialog.Title>{galleryId}</Dialog.Title>
 				<form onSubmit={handleSubmit(onSubmit)}>
+					<button type='submit'>submit</button>
 					<Input placeholder='Название' {...register('gallery')} />
 					<Input
 						placeholder='Красивое название'
@@ -126,10 +127,6 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 						</div>
 					</div>
 
-					<div>
-						<ImagesGallery galleryId={galleryId} />
-					</div>
-
 					<Controller
 						control={control}
 						name='isPublic'
@@ -143,8 +140,10 @@ export const CreatingGallery: FC<TCreatingGallery> = ({
 							/>
 						)}
 					/>
-					<button type='submit'>submit</button>
 				</form>
+				<div>
+					<ImagesGallery galleryId={galleryId} />
+				</div>
 			</Dialog.Panel>
 		</Dialog>
 	)
